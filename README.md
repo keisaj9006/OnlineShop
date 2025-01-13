@@ -1,7 +1,4 @@
 # OnlineShop
-PHP, MySQL, HTML, and CSS project.
-
-# OnlineShop
 
 ## Overview
 
@@ -64,8 +61,8 @@ OnlineShop/
 
 ### Prerequisites
 
-- PHP 7.x or later
-- MySQL 5.7 or later
+- PHP
+- MySQL
 - Apache server or XAMPP/WAMP/MAMP for local development
 
 ### Steps
@@ -104,24 +101,27 @@ OnlineShop/
 
 ### User Actions
 
-1. Register or log in.
+1. Register/ log in.
 2. Browse products on the shop page.
 3. Add products to the shopping cart.
 4. Proceed to checkout to place an order.
 
 ## Screenshots
 
-1. **Homepage (Login):**
-   Displays login and registration options.
-
-2. **Shop Page:**
-   Browse products with options to add to the cart.
-
-3. **Cart Page:**
-   View and manage products in the shopping cart.
-
-4. **Admin Pages:**
-   Add, update, or delete products from the database.
+1. **Homepage:**
+![Zrzut ekranu 2025-01-13 220855](https://github.com/user-attachments/assets/b995524b-0ced-4d17-b6d4-5ced5d13ff85)
+2. **Login Page:**
+![Zrzut ekranu 2025-01-13 221015](https://github.com/user-attachments/assets/b3d92254-6983-481e-9a5c-fed8280d58d9)
+3. **Register Page:**
+![Zrzut ekranu 2025-01-13 221022](https://github.com/user-attachments/assets/15590072-eaaf-4c96-be01-eeddd0860e5c)
+5. **Shop Page:**
+![Zrzut ekranu 2025-01-13 220910](https://github.com/user-attachments/assets/07c4c50d-3ebe-42f8-9f67-f6899c9da6cb)
+6. **Cart Page:**
+![Zrzut ekranu 2025-01-13 220951](https://github.com/user-attachments/assets/7c4f67af-738f-43e5-8247-fac95e433dcb)
+7. **Add/ Update/ Delete:**
+![Zrzut ekranu 2025-01-13 220910](https://github.com/user-attachments/assets/b9ae17d4-224d-4c81-a7bc-dc6b3ed877a3)
+![Zrzut ekranu 2025-01-13 220919](https://github.com/user-attachments/assets/067f18a9-c1af-4264-abd9-34dbacfe1faf)
+![Zrzut ekranu 2025-01-13 220924](https://github.com/user-attachments/assets/125167f2-1712-4af8-ab33-e05c71a3abe7)
 
 ## Future Enhancements
 
