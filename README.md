@@ -122,6 +122,11 @@ OnlineShop/
 ![Zrzut ekranu 2025-01-13 220910](https://github.com/user-attachments/assets/b9ae17d4-224d-4c81-a7bc-dc6b3ed877a3)
 ![Zrzut ekranu 2025-01-13 220919](https://github.com/user-attachments/assets/067f18a9-c1af-4264-abd9-34dbacfe1faf)
 ![Zrzut ekranu 2025-01-13 220924](https://github.com/user-attachments/assets/125167f2-1712-4af8-ab33-e05c71a3abe7)
+8. **Database View:**
+![Zrzut ekranu 2025-01-13 222805](https://github.com/user-attachments/assets/74281747-58d1-49a6-9884-2c7f0839a4a5)
+![Zrzut ekranu 2025-01-13 222811](https://github.com/user-attachments/assets/bcb30ca4-afd0-4605-8f10-959cfc793a2e)
+![Zrzut ekranu 2025-01-13 222824](https://github.com/user-attachments/assets/103841f2-f029-40a1-8506-e17605aaa3a0)
+![image](https://github.com/user-attachments/assets/84103428-dd59-4658-823f-b3dc5091c770)
 
 ## Future Enhancements
 
