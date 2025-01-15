@@ -1,7 +1,7 @@
 <?php
 include('includes/nav.php');
 
-// Start sesji
+// session start
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
@@ -11,21 +11,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $errors = [];
 
-    // Walidacja emaila
+    // email validation
     if (empty($_POST['email'])) {
         $errors[] = 'Enter your email address.';
     } else {
         $email = mysqli_real_escape_string($link, trim($_POST['email']));
     }
 
-    // Walidacja hasła
+    // password validation
     if (empty($_POST['pass'])) {
         $errors[] = 'Enter your password.';
     } else {
         $password = trim($_POST['pass']);
     }
 
-    // Logowanie
+    // log in
     if (empty($errors)) {
         $query = "SELECT user_id, first_name, last_name, pass FROM users WHERE email = '$email'";
         $result = mysqli_query($link, $query);
@@ -33,12 +33,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($result && mysqli_num_rows($result) == 1) {
             $row = mysqli_fetch_assoc($result);
 
-            // Debugowanie weryfikacji hasła
             echo "Email (entered): $email<br>";
             echo "Password (entered): $password<br>";
             echo "Password (hash from DB): {$row['pass']}<br>";
-
-            // Sprawdzenie poprawności hasła
+         
             if (password_verify($password, $row['pass'])) {
                 $_SESSION['user_id'] = $row['user_id'];
                 $_SESSION['first_name'] = $row['first_name'];
@@ -57,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     mysqli_close($link);
 }
 
-// Wyświetlenie błędów
+// show me errors
 if (isset($errors) && !empty($errors)) {
     echo '<div class="container my-4"><p class="text-danger">Oops! There was a problem:<br>';
     foreach ($errors as $msg) {
