@@ -29,15 +29,11 @@ include 'includes/nav.php';
 <?php
 include 'includes/footer.php'; // Import footer
 
-# Obsługa formularza
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    # Połączenie z bazą danych
     require 'db.php';
 
-    # Inicjalizacja tablicy błędów
     $errors = array();
 
-    # Walidacja i sanitizacja danych
     if (empty($_POST['item_name'])) {
         $errors[] = 'Enter the item name.';
     } else {
@@ -50,12 +46,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $d = mysqli_real_escape_string($link, trim($_POST['item_desc']));
     }
 
-    # Obsługa przesłanego obrazu
     if (!empty($_FILES['item_img']['name'])) {
         $target_dir = "uploads/";
         $target_file = $target_dir . basename($_FILES["item_img"]["name"]);
     
-        // Sprawdzenie, czy przesyłanie pliku się powiodło
         if (move_uploaded_file($_FILES["item_img"]["tmp_name"], $target_file)) {
             $img = basename($_FILES["item_img"]["name"]); // Zapisujemy tylko nazwę pliku do bazy danych
         } else {
@@ -71,7 +65,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $p = mysqli_real_escape_string($link, trim($_POST['item_price']));
     }
 
-    # Jeśli nie ma błędów, wstaw dane do bazy
     if (empty($errors)) {
         $q = "INSERT INTO products (item_name, item_desc, item_img, item_price) 
               VALUES ('$n', '$d', '$img', '$p')";
@@ -83,11 +76,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo '<p class="text-danger text-center">Error: ' . mysqli_error($link) . '</p>';
         }
 
-        # Zamknięcie połączenia z bazą
         mysqli_close($link);
         exit();
     } else {
-        # Wyświetlenie błędów
+
         echo '<div class="text-danger text-center">';
         foreach ($errors as $msg) {
             echo "<p>$msg</p>";
@@ -95,7 +87,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo '<p>Please try again.</p></div>';
     }
 
-    # Zamknięcie połączenia z bazą
     mysqli_close($link);
 }
 ?>
