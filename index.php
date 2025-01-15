@@ -15,10 +15,8 @@ if (!isset($_SESSION['user_id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
-    <!-- Opcjonalne style tła -->
     <style>
         body {
-            background: url('images/background.jpg') no-repeat center center fixed;
             background-size: cover;
             color: #fff;
             text-align: center;
