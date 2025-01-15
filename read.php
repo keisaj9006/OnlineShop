@@ -16,7 +16,7 @@ if ($r && mysqli_num_rows($r) > 0) {
         ?>
         <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
             <div class="card product-card shadow-sm">
-                <!-- Obraz produktu -->
+
                 <img src="<?php echo $imgExists ? 'uploads/' . htmlspecialchars($row['item_img']) : 'placeholder.jpg'; ?>" 
                 class="card-img-top product-img" 
                 alt="<?php echo htmlspecialchars($row['item_name']); ?>">
@@ -50,7 +50,7 @@ if ($r && mysqli_num_rows($r) > 0) {
 
     echo '</div>'; 
     echo '</div>'; 
-} else { // display message.
+} else { 
     echo '<div class="container my-4">';
     echo '<p class="text-center text-muted">There are currently no items in the table to display.</p>';
     echo '</div>';
