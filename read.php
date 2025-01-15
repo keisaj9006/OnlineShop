@@ -6,12 +6,10 @@ require('db.php'); // Open database connection.
 $q = "SELECT * FROM products";
 $r = mysqli_query($link, $q);
 
-// Sprawdzenie, czy istnieją rekordy
 if ($r && mysqli_num_rows($r) > 0) {
     echo '<div class="container my-4">';
     echo '<div class="row">';
 
-    // Pętla przetwarzająca produkty
     while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
         $imgPath = "uploads/" . htmlspecialchars($row['item_img']);
         $imgExists = file_exists($imgPath);
@@ -58,7 +56,6 @@ if ($r && mysqli_num_rows($r) > 0) {
     echo '</div>';
 }
 
-//Close database connection.
 mysqli_close($link);
 include('includes/footer.php');
 ?>
