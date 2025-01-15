@@ -6,28 +6,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $errors = [];
 
-    // Walidacja imienia
+    // first name validation
     if (empty($_POST['first_name'])) {
         $errors[] = 'Enter your first name.';
     } else {
         $fn = mysqli_real_escape_string($link, trim($_POST['first_name']));
     }
 
-    // Walidacja nazwiska
+    // surname validation
     if (empty($_POST['last_name'])) {
         $errors[] = 'Enter your last name.';
     } else {
         $ln = mysqli_real_escape_string($link, trim($_POST['last_name']));
     }
 
-    // Walidacja emaila
+    // email validation
     if (empty($_POST['email'])) {
         $errors[] = 'Please, enter your email address.';
     } else {
         $e = mysqli_real_escape_string($link, trim($_POST['email']));
     }
 
-    // Walidacja hasła
+    // password validation
     if (!empty($_POST['pass1'])) {
         if ($_POST['pass1'] != $_POST['pass2']) {
             $errors[] = 'Passwords do not match.';
@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errors[] = 'Enter your password.';
     }
 
-    // Sprawdzenie, czy email jest już zarejestrowany
+    // checking for duplicated emails
     if (empty($errors)) {
         $q = "SELECT user_id FROM users WHERE email='$e'";
         $r = mysqli_query($link, $q);
@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-    // Rejestracja użytkownika
+    // sign in the user
     if (empty($errors)) {
         $q = "INSERT INTO users (first_name, last_name, email, pass, reg_date) 
               VALUES ('$fn', '$ln', '$e', '$p', NOW())";
